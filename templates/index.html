@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Splitwise - Home</title>
+    <link rel="stylesheet" href = "{{ url_for('static' , filename='css/style.css')}}"> <!-- here we linked our file with static ~ stylecss -->
+</head>
+<body>
+    <!-- NAVBAR -->
+     <nav class = "navbar">
+        <div class = "nav-container">
+            <div class="logo">
+                <img src="/static/images/split_wisely_logo.png" alt="Logo">
+            </div>
+            <ul class="nav-links">
+                <li><a href="#">Dashboard</a></li>
+                <li><a href="#">Groups</a></li>
+                <li><a href="#">Friends</a></li>
+                <li><a href="#">Activity</a></li>
+            </ul>
+        </div>
+     </nav>
+
+     <!-- MAIN CONTENT YE RAHA MITTAR -->
+      <div class="main container">
+
+    <!-- BALANACE SUMMARY SECTION YU RAHA LAADLE -->
+     <section class="balance -section">
+        <div class="balance-card owe">
+            <h3>YOU OWE</h3> <!-- PAISE DE DIYO TIME PAR LAADLE -->
+            <p class+"amount">$850</p>
+        </div>
+        <div class="balance-card owed">
+            <h3>You Are Owed</h3> <!-- PAISE ayenge mote wale kisi se toh -->
+            <p class="amount">$100</p>
+        </div>
+        <div class="balance-card total">
+            <h3>Total Balance</h3> <!-- itne bache merpe le de kr-->
+            <p class="amount">$-750</p>
+        </div>
+     </section>
+     <!-- RECENT EXPENSES SECTION -->
+      <section class="expenses-section">
+        <h2>Recent Expenses</h2>
+        <div class="expense-list">
+            <div class="expense-item">
+                <div class="expense-info">
+                    <h4>Dinner at Resturant</h4>
+                    <p class="expense-date">Oct 9 , 2025</p> <!-- It's temporary one ,just for UI we will create it for the real time later -->
+                </div>
+                <div class="expense-amount owe-amount">
+                    <p>You Owe $500</p>
+                </div>
+            </div>
+            <div class="expense-item">
+                <div class="expense-info">
+                    <h4>Movie Tickets</h4>
+                    <p class="expense-date">Oct 8 ,2025</p>
+                </div>
+                <div class="expense-amount owed-amount">
+                    <p> Kartik owes you $700</p>
+                </div>
+            </div>
+            <div class="expense-item">
+                <div class="expense-info">
+                    <h4>Coffee 🍵</h4>
+                    <p class="expense-date"> Oct 5, 2025 </p>
+                </div>
+                <div class="expense-amount owe-amount">
+                    <p>You owe $150</p>
+                </div>
+            </div>
+        </div>
+      </section>
+      </div>
+      <button class="add-expense-btn">+</button> 
+      <!-- Screen ke corner mein floating "+" button (WhatsApp jaisa)
+      Isko click karke naya expense add karne k liye  -->
+      <script src="{{url_for('static' , filename='js/app.js')}}"></script>  <!-- JS file ko HTML se connect kar rahe hain -->
+</body>
+</html>     
