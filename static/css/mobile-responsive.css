@@ -1,0 +1,372 @@
+/* ===== MOBILE RESPONSIVE IMPROVEMENTS ===== */
+
+/* ye CSS sirf mobile devices ke liye apply hoga */
+@media (max-width: 768px) {
+    
+    /* ===== NAVBAR MOBILE OPTIMIZATION ===== */
+    
+    /* nav container - better spacing */
+    .nav-container {
+        padding: 0 15px;
+        gap: 10px;
+    }
+    
+    /* logo chhota kar diya mobile pe */
+    .logo {
+        font-size: 20px !important;
+    }
+    
+    /* desktop menu hide kar di - hamburger menu dikhegi */
+    .nav-links {
+        position: fixed;
+        top: 60px; /* navbar ke neeche */
+        right: -100%; /* screen ke bahar hidden */
+        width: 250px;
+        height: calc(100vh - 60px); /* full height minus navbar */
+        background: white;
+        flex-direction: column;
+        padding: 20px;
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+        transition: right 0.3s ease;
+        z-index: 999;
+        gap: 0;
+    }
+    
+    /* jab menu open ho - slide in from right */
+    .nav-links.active {
+        right: 0;
+    }
+    
+    /* menu items styling mobile pe */
+    .nav-links li {
+        width: 100%;
+        margin: 0;
+        border-bottom: 1px solid #e2e8f0;
+    }
+    
+    .nav-links a {
+        display: block;
+        padding: 15px 10px;
+        color: #2d3748 !important;
+        font-size: 16px;
+    }
+    
+    .nav-links a:hover,
+    .nav-links a.active {
+        background: #f7fafc;
+        border-radius: 8px;
+    }
+    
+    /* user profile hide kar di mobile pe - space save karne ke liye */
+    .user-profile {
+        display: none;
+    }
+    
+    /* dark mode toggle chhota kar diya */
+    .theme-toggle {
+        margin-left: auto; /* right side pe */
+    }
+    
+    .toggle-label {
+        width: 50px;
+        height: 25px;
+    }
+    
+    .toggle-ball {
+        width: 20px;
+        height: 20px;
+    }
+    
+    /* hamburger menu button - mobile pe dikhega */
+    .hamburger-menu {
+        display: flex !important; /* normally hidden hai desktop pe */
+        flex-direction: column;
+        gap: 5px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 8px;
+        margin-left: 10px;
+    }
+    
+    /* hamburger lines */
+    .hamburger-line {
+        width: 25px;
+        height: 3px;
+        background: white;
+        border-radius: 2px;
+        transition: all 0.3s ease;
+    }
+    
+    /* jab menu open ho - hamburger X ban jaye */
+    .hamburger-menu.active .hamburger-line:nth-child(1) {
+        transform: rotate(45deg) translateY(8px);
+    }
+    
+    .hamburger-menu.active .hamburger-line:nth-child(2) {
+        opacity: 0; /* middle line hide */
+    }
+    
+    .hamburger-menu.active .hamburger-line:nth-child(3) {
+        transform: rotate(-45deg) translateY(-8px);
+    }
+    
+    /* dark mode me navbar menu */
+    body.dark-mode .nav-links {
+        background: #2d3748;
+    }
+    
+    body.dark-mode .nav-links li {
+        border-bottom-color: #4a5568;
+    }
+    
+    body.dark-mode .nav-links a {
+        color: #e2e8f0 !important;
+    }
+    
+    body.dark-mode .nav-links a:hover {
+        background: #1a202c;
+    }
+    
+    /* ===== MAIN CONTAINER MOBILE ===== */
+    
+    .main-container {
+        padding: 15px;
+    }
+    
+    /* ===== BALANCE CARDS MOBILE ===== */
+    
+    .balance-section {
+        grid-template-columns: 1fr; /* ek column - cards stack honge */
+        gap: 15px;
+    }
+    
+    .balance-card {
+        padding: 20px;
+    }
+    
+    .balance-card h3 {
+        font-size: 12px;
+    }
+    
+    .balance-card .amount {
+        font-size: 28px;
+    }
+    
+    /* ===== EXPENSES SECTION MOBILE ===== */
+    
+    .expenses-section {
+        padding: 20px 15px;
+    }
+    
+    .expenses-section h2 {
+        font-size: 20px;
+    }
+    
+    .expense-item {
+        padding: 12px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    
+    .expense-info h4 {
+        font-size: 15px;
+    }
+    
+    .expense-date {
+        font-size: 12px;
+    }
+    
+    .expense-amount {
+        font-size: 14px;
+        align-self: flex-end; /* right side pe */
+    }
+    
+    /* ===== FLOATING BUTTON MOBILE ===== */
+    
+    .add-expense-btn {
+        width: 55px;
+        height: 55px;
+        bottom: 20px;
+        right: 20px;
+        font-size: 26px;
+    }
+    
+    /* ===== MODAL MOBILE OPTIMIZATION ===== */
+    
+    .modal-content {
+        width: 95%;
+        max-width: 95%;
+        padding: 20px;
+        max-height: 85vh;
+    }
+    
+    .modal-header h2 {
+        font-size: 20px;
+    }
+    
+    .form-group label {
+        font-size: 12px;
+    }
+    
+    .form-group input,
+    .form-group select {
+        padding: 10px 12px;
+        font-size: 15px;
+    }
+    
+    .form-actions {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .btn-cancel,
+    .btn-submit {
+        width: 100%;
+    }
+    
+    /* ===== GROUPS PAGE MOBILE ===== */
+    
+    .groups-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    .group-card {
+        padding: 20px;
+    }
+    
+    /* ===== FRIENDS PAGE MOBILE ===== */
+    
+    .friends-list {
+        gap: 15px;
+    }
+    
+    .friend-card {
+        padding: 15px;
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .friend-profile {
+        width: 100%;
+    }
+    
+    .friend-actions {
+        width: 100%;
+        justify-content: space-between;
+    }
+    
+    .friend-balance {
+        text-align: left;
+    }
+    
+    /* ===== ACTIVITY PAGE MOBILE ===== */
+    
+    .filters-section {
+        padding: 15px;
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .search-box {
+        width: 100%;
+    }
+    
+    .filter-buttons {
+        width: 100%;
+        justify-content: space-between;
+    }
+    
+    .filter-btn {
+        flex: 1;
+        padding: 8px 12px;
+        font-size: 13px;
+    }
+    
+    .activity-item {
+        padding: 15px;
+        gap: 15px;
+    }
+    
+    .activity-icon {
+        width: 45px;
+        height: 45px;
+        font-size: 20px;
+    }
+    
+    .activity-title {
+        font-size: 16px;
+    }
+    
+    .activity-amount {
+        font-size: 18px;
+    }
+    
+    /* ===== TOUCH OPTIMIZATIONS ===== */
+    
+    /* sab clickable elements ko bada kar diya - touch friendly */
+    button,
+    a,
+    .clickable {
+        min-height: 44px; /* Apple ki recommendation */
+        min-width: 44px;
+    }
+    
+    /* tap highlight color */
+    * {
+        -webkit-tap-highlight-color: rgba(28, 194, 159, 0.2);
+    }
+    
+    /* smooth scrolling mobile pe */
+    html {
+        scroll-behavior: smooth;
+    }
+    
+}
+
+/* ===== EXTRA SMALL MOBILE (< 480px) ===== */
+@media (max-width: 480px) {
+    
+    /* logo aur chhota */
+    .logo {
+        font-size: 18px !important;
+    }
+    
+    /* balance cards aur compact */
+    .balance-card .amount {
+        font-size: 24px;
+    }
+    
+    /* hamburger menu width kam */
+    .nav-links {
+        width: 220px;
+    }
+    
+    /* activity page */
+    .activity-header {
+        flex-direction: column;
+        gap: 8px;
+    }
+    
+    .activity-amount {
+        align-self: flex-start;
+    }
+    
+}
+
+/* ===== LANDSCAPE MODE FIXES ===== */
+@media (max-width: 768px) and (orientation: landscape) {
+    
+    /* navbar height kam */
+    .navbar {
+        padding: 10px 0;
+    }
+    
+    /* modal height adjust */
+    .modal-content {
+        max-height: 90vh;
+    }
+    
+}
